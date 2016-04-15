@@ -1,29 +1,42 @@
 #news {
-    border: 1px solid #f00;
-    width:100%;
+    width: 100%;
+    position:relative
 }
 
-#news ul{
-    width:85%;
-    height:50px;
-    list-style-type:none;
+#news ul {
+    width: 85%;
+    height: 50px;
+    list-style-type: none;
     margin: 0 10%;
 }
 
-#news ul li{
-    height:50px;
-    float:left;
+#news ul li {
+    height: 50px;
+    float: left;
     margin-left: 50px;
     line-height: 50px;
 }
 
-#news ul li a{
-    text-decoration: none;
-    color: #000;
-    font-size:14px;
+.newBarHover {
+    border-bottom: 3px solid #188eee;
 }
 
-#news ul li a:hover{
-    font-size:14px;
+#news .Line {
+    height: 3px;
+    width: 80px;
+    position: absolute;
+    background: #188eee;
+    left: 178px;
+    top: 45px
+}
+
+#news ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+#news ul li a:hover {
+    font-size: 14px;
     font-weight: bold;
 }
