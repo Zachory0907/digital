@@ -1,6 +1,6 @@
 #news {
     width: 100%;
-    position:relative
+    position: relative
 }
 
 #news ul {
@@ -39,4 +39,142 @@
 #news ul li a:hover {
     font-size: 14px;
     font-weight: bold;
+}
+
+#news .Content {
+    width: 1250px;
+    height: 210px;
+    background: #f5f5f5;
+    margin: 2px auto;
+    display: none;
+    padding-top: 15px;
+    padding-left: 10px;
+}
+
+#news #Con .Title ul li a.ys {
+    color: #188eee;
+}
+
+#news .Content dl {
+    width: 240px;
+    height: 180px;
+    padding: 10px 4px;
+    float: left;
+}
+
+#news .Content dl dt {
+    width: 234px;
+    height: 126px;
+    background: yellow;
+    margin: auto;
+}
+
+#news .Content dl dd {
+    font-size: 14px;
+    font-family: 微软雅黑;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 5px
+}
+
+#news .Content dl dd a {
+    color: black;
+    text-decoration: none;
+}
+
+#news .Content dl dd a:hover {
+    color: #188eee;
+    text-decoration: none;
+}
+
+#news .Content dl dd span {
+    color: #FF5200;
+    font-weight: bold;
+}
+
+#news .Content dl dd i {
+    width: 1px;
+    height: 10px;
+    background: #666;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#news .Content dl dd a.mc {
+    color: #666;
+}
+
+#news .Content dl dd a.mc:hover {
+    color: #188eee;
+}
+
+#news .Content dl dd.Price {
+    height: 20px;
+    line-height: 20px;
+}
+
+#news .Content dl.hover {
+    background: #fff;
+}
+
+#products {
+    width: 93%;
+    margin: 0 auto;
+}
+
+#products .recommend {
+    width: 100%;
+    margin: 20px auto;
+}
+
+#products .recommend .banner {
+    border: 1px solid red;
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+
+#products .recommend .catalog {
+    width: 26%;
+    height: 100%;
+    float: left
+}
+
+#products .phone {
+    width: 100%;
+    margin: 20px auto;
+    border-left: 1px solid #ffbf00;
+    border-top: 1px solid #ffbf00;
+    height: 509px;
+    box-shadow: -2px -2px 25px -6px orange;
+    opacity: 0.9;
+    -webkit-box-shadow: -2px -2px 25px -6px #ffbf00;
+    -moz-box-shadow: -2px -2px 25px -6px orange;
+}
+
+#products .tv {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 60px;
+    border-right: 1px solid orangered;
+    border-top: 1px solid orangered;
+    height: 509px;
+    box-shadow: 2px -2px 18px -7px red;
+    opacity: 0.9;
+    -webkit-box-shadow: 2px -2px 18px -7px red;
+    -moz-box-shadow: 2px -2px 18px -7px red;
+}
+
+#products .title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 30px;
+}
+
+#products .phone .title {
+
+}
+
+#products .tv .title {
+
 }
