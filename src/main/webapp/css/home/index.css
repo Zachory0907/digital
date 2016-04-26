@@ -142,7 +142,7 @@
 
 #products .phone {
     width: 100%;
-    margin: 20px auto;
+    margin: 0px auto;
     border-left: 1px solid #ffbf00;
     border-top: 1px solid #ffbf00;
     height: 509px;
@@ -155,7 +155,6 @@
 #products .tv {
     width: 100%;
     margin: 0 auto;
-    margin-top: 60px;
     border-right: 1px solid orangered;
     border-top: 1px solid orangered;
     height: 509px;
@@ -163,18 +162,4 @@
     opacity: 0.9;
     -webkit-box-shadow: 2px -2px 18px -7px red;
     -moz-box-shadow: 2px -2px 18px -7px red;
-}
-
-#products .title {
-    font-size: 25px;
-    font-weight: bold;
-    margin: 30px;
-}
-
-#products .phone .title {
-
-}
-
-#products .tv .title {
-
 }

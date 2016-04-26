@@ -7,7 +7,10 @@
     <script src="../js/import/angular.min.js"></script>
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/home/index.css" rel="stylesheet">
+    <link href="../css/home/fanzhuan.css" rel="stylesheet">
     <script src="../js/home/index.js"></script>
+    <script src="../js/home/prefixfree.min.js"></script>
+    <script src="../js/home/modernizr.js"></script>
 </head>
 <body ng-app="app" ng-controller="indexController">
 <div id="header">
@@ -230,13 +233,17 @@
         </div>
         <div style="clear: both"></div>
     </div>
-
-    <div class="phone">
-        <div class="title">Top手机榜</div>
-    </div>
-
-    <div class="tv">
-        <div class="title">TV状元榜</div>
+    <div id="import_fanzhuan">
+        <div class="foo">
+            <span class="letter" data-letter="Top手机榜">Top手机榜</span>
+        </div>
+        <div class="phone">
+        </div>
+        <div class="foo">
+            <span class="letter" data-letter="TV状元榜">TV状元榜</span>
+        </div>
+        <div class="tv">
+        </div>
     </div>
     <div id="extending"></div>
     <div id="copyright">
