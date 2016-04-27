@@ -42,7 +42,7 @@
 }
 
 #news .Content {
-    width: 1250px;
+    width: 1260px;
     height: 210px;
     background: #f5f5f5;
     margin: 2px auto;
@@ -56,8 +56,8 @@
 }
 
 #news .Content dl {
-    width: 240px;
-    height: 180px;
+    width: 248px;
+    height: 188px;
     padding: 10px 4px;
     float: left;
 }
