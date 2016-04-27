@@ -7,7 +7,7 @@ angular.module('app', []).controller('indexController', function($scope, $http){
 	}).mouseout(function(){
 		$(this).removeClass("newBarHover");
 	});
-
+ 
 	/*news随鼠标动而变化*/
 	$("#news ul li").hover(function(){
 		var index = $(this).index();

@@ -152,7 +152,7 @@
     -moz-box-shadow: -2px -2px 25px -6px orange;
 }
 
-#products ul{
+#products .phones ul{
     color: #333;
     font: 12px/22px "Microsoft Yahei", "SimSun", "Arial Narrow", HELVETICA;
     padding-top: 20px;
@@ -161,7 +161,7 @@
     float:left;
 }
 
-#products ul li{
+#products .phones ul li{
     height: 40px;
     line-height: 40px;
     font-size: 18px;
@@ -169,7 +169,7 @@
     position: relative;
 }
 
-#products ul li:hover{
+#products .phones ul li:hover{
     height: 55px;
     line-height: 55px;
     font-size: 22px;
@@ -177,14 +177,14 @@
     cursor: pointer;
 }
 
-#products ul li span{
+#products .phones ul li span{
     font-size: 18px;
     font-weight: bold;
     color: rgb(255, 100, 100);
     padding: 0px 2px;
 }
 
-#products ul li span.up{
+#products .phones ul li span.up{
     width: 51px;
     height: 32px;
     background: url("../../images/home/icons/qushi.png") no-repeat;
@@ -193,19 +193,19 @@
     top: 10px;
 }
 
-#products .container{
+#products .phones .container{
     margin-top: 30px;
     width: 350px;
     height: 400px;
     float: left;
 }
-#products .container .pic{
+#products .phones .container .pic{
     margin: 0 auto;
     width:228px;
     height:265px;
 }
 
-#products .container .content{
+#products .phones .container .content{
     text-align: center;
     line-height: 30px;
     font-size: 15px;
