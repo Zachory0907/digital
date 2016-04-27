@@ -197,10 +197,10 @@ div.foo {
 .letter {
     display: inline-block;
     font-weight: 900;
-    font-size: 3em;
+    font-size: 2em;
     margin-top: 35px;
     position: relative;
-    color: #00B4F1;
+    color: #CECECE;
     transform-style: preserve-3d;
     perspective: 400;
     z-index: 1;
@@ -219,7 +219,7 @@ div.foo {
 }
 
 .letter:before {
-    color: #fff;
+    color: #FBFAFA;
     text-shadow: -1px 0px 1px rgba(255, 255, 255, .8),
     1px 0px 1px rgba(0, 0, 0, .8);
     z-index: 3;

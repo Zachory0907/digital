@@ -145,11 +145,74 @@
     margin: 0px auto;
     border-left: 1px solid #ffbf00;
     border-top: 1px solid #ffbf00;
-    height: 509px;
+    height: 450px;
     box-shadow: -2px -2px 25px -6px orange;
     opacity: 0.9;
     -webkit-box-shadow: -2px -2px 25px -6px #ffbf00;
     -moz-box-shadow: -2px -2px 25px -6px orange;
+}
+
+#products ul{
+    color: #333;
+    font: 12px/22px "Microsoft Yahei", "SimSun", "Arial Narrow", HELVETICA;
+    padding-top: 20px;
+    padding-left: 50px;
+    width: 350px;
+    float:left;
+}
+
+#products ul li{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    list-style-type: none;
+    position: relative;
+}
+
+#products ul li:hover{
+    height: 55px;
+    line-height: 55px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#products ul li span{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 100, 100);
+    padding: 0px 2px;
+}
+
+#products ul li span.up{
+    width: 51px;
+    height: 32px;
+    background: url("../../images/home/icons/qushi.png") no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+}
+
+#products .container{
+    margin-top: 30px;
+    width: 350px;
+    height: 400px;
+    float: left;
+}
+#products .container .pic{
+    margin: 0 auto;
+    width:228px;
+    height:265px;
+}
+
+#products .container .content{
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    text-indent: 20px;
+	width:80%;
+    margin: 20px auto;
+    color: #919191;
 }
 
 #products .tv {
@@ -163,3 +226,4 @@
     -webkit-box-shadow: 2px -2px 18px -7px red;
     -moz-box-shadow: 2px -2px 18px -7px red;
 }
+
