@@ -23,10 +23,16 @@ angular.module('app', []).controller('indexController', function($scope, $http){
 		$(this).removeClass("hover");
 	});
 
-	/*top随鼠标动而变化*/
+	/*top phone随鼠标动而变化*/
 	$("#products .phone ul li").hover(function(){
 		var index = $(this).index();
 		$("#products .phone .container").eq(index).show().siblings("#products .phone .container").hide();
+	});
+
+	/*top tv随鼠标动而变化*/
+	$("#products .tv ul li").hover(function(){
+		var index = $(this).index();
+		$("#products .tv .container").eq(index).show().siblings("#products .tv .container").hide();
 	});
 
 });

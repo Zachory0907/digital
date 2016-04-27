@@ -227,3 +227,71 @@
     -moz-box-shadow: 2px -2px 18px -7px red;
 }
 
+#products .tv .catas{
+    width: 530px;
+    float:left;
+    border: 1px solid red;
+}
+
+#products .tv ul{
+    color: #333;
+    font: 12px/22px "Microsoft Yahei", "SimSun", "Arial Narrow", HELVETICA;
+    padding-top: 20px;
+    padding-left: 50px;
+    width: 350px;
+    float:left;
+}
+
+#products .tv ul li{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    list-style-type: none;
+    position: relative;
+}
+
+#products .tv ul li:hover{
+    height: 55px;
+    line-height: 55px;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#products .tv ul li span{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(255, 100, 100);
+    padding: 0px 2px;
+}
+
+#products .tv ul li span.up{
+    width: 51px;
+    height: 32px;
+    background: url("../../images/home/icons/qushi.png") no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+}
+
+#products .tv .container{
+    margin-top: 30px;
+    width: 350px;
+    height: 400px;
+    float: left;
+}
+#products .tv .container .pic{
+    margin: 0 auto;
+    width:353px;
+    height:265px;
+}
+
+#products .tv .container .content{
+    text-align: center;
+    line-height: 30px;
+    font-size: 15px;
+    text-indent: 20px;
+    width:80%;
+    margin: 20px auto;
+    color: #919191;
+}
