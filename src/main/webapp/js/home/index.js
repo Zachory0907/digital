@@ -35,4 +35,28 @@ angular.module('app', []).controller('indexController', function($scope, $http){
 		$("#products .tv .container").eq(index).show().siblings("#products .tv .container").hide();
 	});
 
+	//广告
+	$("#fashions .ImgList").eq(0).show().siblings("div").hide();
+	var _advIndex = 0;
+	var _advTimer = null;
+	$("ul.Button li").hover(function(){
+		clearInterval(_advTimer);
+		_advIndex = $(this).index();
+		$(this).addClass("hover").siblings().removeClass("hover");
+		$("#fashions .ImgList").eq(_advIndex).fadeIn().siblings("div").fadeOut();
+	}, function(){
+		autoPlay();
+	});
+	function autoPlay(){
+		_advTimer = setInterval(function(){
+			_advIndex++;
+			if(_advIndex<5) {
+				if(_advIndex==4){_advIndex=-1}
+				$("ul.Button li").eq(_advIndex).addClass("hover").siblings().removeClass("hover");
+				$("#fashions .ImgList").eq(_advIndex).fadeIn().siblings("div").fadeOut();
+			}
+		}, 2000);
+	};
+	autoPlay();
+
 });

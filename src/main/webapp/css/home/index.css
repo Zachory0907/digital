@@ -117,6 +117,50 @@
     background: #fff;
 }
 
+#fashions {
+    width: 93%;
+    height: 480px;
+    margin: 0 auto;
+}
+
+#fashions .banner {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+#fashions .banner .ImgList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 850px;
+    height: 400px;
+}
+
+#fashions ul.Button li {
+    width: 20px;
+    height: 20px;
+    background: rgb(56, 65, 95);
+    float: left;
+    margin: 0 5px;
+    list-style-type: none;
+    color: #fff;
+    text-align: center;
+    line-height: 21px;
+    border-radius: 13px
+}
+
+#fashions ul.Button {
+    position: absolute;
+    bottom: 20px;
+    left: 28%;
+    display: inline-block
+}
+
+#fashions ul.Button li.hover {
+    background: #ffa500
+}
+
 #products {
     width: 93%;
     margin: 0 auto;
@@ -125,13 +169,6 @@
 #products .recommend {
     width: 100%;
     margin: 20px auto;
-}
-
-#products .recommend .banner {
-    border: 1px solid red;
-    float: right;
-    width: 50px;
-    height: 50px;
 }
 
 #products .recommend .catalog {
@@ -152,16 +189,16 @@
     -moz-box-shadow: -2px -2px 25px -6px orange;
 }
 
-#products .phone ul{
+#products .phone ul {
     color: #333;
     font: 12px/22px "Microsoft Yahei", "SimSun", "Arial Narrow", HELVETICA;
-    padding-top: 20px;
-    padding-left: 50px;
+    padding-top: 30px;
+    padding-left: 80px;
     width: 350px;
-    float:left;
+    float: left;
 }
 
-#products .phone ul li{
+#products .phone ul li {
     height: 40px;
     line-height: 40px;
     font-size: 18px;
@@ -169,7 +206,7 @@
     position: relative;
 }
 
-#products .phone ul li:hover{
+#products .phone ul li:hover {
     height: 55px;
     line-height: 55px;
     font-size: 22px;
@@ -177,14 +214,14 @@
     cursor: pointer;
 }
 
-#products .phone ul li span{
+#products .phone ul li span {
     font-size: 18px;
     font-weight: bold;
     color: rgb(255, 100, 100);
     padding: 0px 2px;
 }
 
-#products .phone ul li span.up{
+#products .phone ul li span.up {
     width: 51px;
     height: 32px;
     background: url("../../images/home/icons/qushi.png") no-repeat;
@@ -193,24 +230,25 @@
     top: 10px;
 }
 
-#products .phone .container{
-    margin-top: 30px;
-    width: 350px;
+#products .phone .container {
+    margin-top: 45px;
+    width: 390px;
     height: 400px;
     float: left;
 }
-#products .phone .container .pic{
+
+#products .phone .container .pic {
     margin: 0 auto;
-    width:228px;
-    height:265px;
+    width: 228px;
+    height: 265px;
 }
 
-#products .phone .container .content{
+#products .phone .container .content {
     text-align: center;
     line-height: 30px;
     font-size: 15px;
     text-indent: 20px;
-	width:80%;
+    width: 80%;
     margin: 20px auto;
     color: #919191;
 }
@@ -227,22 +265,59 @@
     -moz-box-shadow: 2px -2px 18px -7px red;
 }
 
-#products .tv .catas{
-    width: 530px;
-    float:left;
-    border: 1px solid red;
+#products .catas {
+    width: 410px;
+    float: left;
+    padding: 30px;
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
 }
 
-#products .tv ul{
+#products .catas .b_title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #f00;
+    padding: 20px 6px;
+}
+
+#products .catas a {
+    text-decoration: none;
+}
+
+#products .catas span {
+    padding-left: 10px;
+}
+
+#products .catas span a {
+    font: 10px/150% Arial, Verdana;
+    font-weight: 100;
+    color: #c7254e;
+}
+
+#products .catas .brand .b_content {
+    padding: 0 0 10px 30px;
+}
+
+#products .catas .brand .b_content a {
+    padding: 10px;
+    color: #333;
+}
+
+#products .catas .brand .b_content a:hover {
+    padding: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+#products .tv ul {
     color: #333;
     font: 12px/22px "Microsoft Yahei", "SimSun", "Arial Narrow", HELVETICA;
     padding-top: 20px;
     padding-left: 50px;
     width: 350px;
-    float:left;
+    float: left;
 }
 
-#products .tv ul li{
+#products .tv ul li {
     height: 40px;
     line-height: 40px;
     font-size: 18px;
@@ -250,7 +325,7 @@
     position: relative;
 }
 
-#products .tv ul li:hover{
+#products .tv ul li:hover {
     height: 55px;
     line-height: 55px;
     font-size: 22px;
@@ -258,14 +333,14 @@
     cursor: pointer;
 }
 
-#products .tv ul li span{
+#products .tv ul li span {
     font-size: 18px;
     font-weight: bold;
     color: rgb(255, 100, 100);
     padding: 0px 2px;
 }
 
-#products .tv ul li span.up{
+#products .tv ul li span.up {
     width: 51px;
     height: 32px;
     background: url("../../images/home/icons/qushi.png") no-repeat;
@@ -274,24 +349,25 @@
     top: 10px;
 }
 
-#products .tv .container{
+#products .tv .container {
     margin-top: 30px;
-    width: 350px;
+    width: 420px;
     height: 400px;
     float: left;
 }
-#products .tv .container .pic{
+
+#products .tv .container .pic {
     margin: 0 auto;
-    width:353px;
-    height:265px;
+    width: 353px;
+    height: 265px;
 }
 
-#products .tv .container .content{
+#products .tv .container .content {
     text-align: center;
     line-height: 30px;
     font-size: 15px;
     text-indent: 20px;
-    width:80%;
+    width: 80%;
     margin: 20px auto;
     color: #919191;
 }
