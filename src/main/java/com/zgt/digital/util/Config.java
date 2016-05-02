@@ -26,8 +26,11 @@ public class Config extends JFinalConfig {
 
 	@Override
 	public void configConstant(Constants me) {
-		me.setViewType(ViewType.JSP);
-		me.setJspViewExtension(".html");
+		me.setEncoding(Consts.DEFAULT_ENCODING);
+		/*me.setViewType(ViewType.JSP);
+		me.setJspViewExtension(".html");*/
+		me.setViewType(ViewType.VELOCITY);
+		me.setVelocityViewExtension("html");
 		me.setEncoding(Consts.DEFAULT_ENCODING);
 		me.setError500View("/error.html");
 		me.setError401View("/40x.html");

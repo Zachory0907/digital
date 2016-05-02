@@ -1,0 +1,46 @@
+#goodsContainer{
+    width: 1210px;
+    margin: 0 auto;
+    border: solid 1px red;
+    border-bottom: solid 10px #f2f2f2;
+    position: relative;
+}
+#goodsContainer .g-box{
+    width: 100%;
+    position: relative;
+    z-index: 3;
+}
+#goodsContainer .g-box .item-preview{
+    float: left;
+    padding-bottom: 15px;
+    display: inline;
+    width: 378px;
+    position: relative;
+}
+#goodsContainer .g-box .item-preview .good-pic{
+    width: 350px;
+    height: 350px;
+    margin: 14px 0 14px 14px;
+    position: relative;
+}
+#goodsContainer .g-box .item-preview .good-list{
+
+}
+#goodsContainer .g-box .item-preview .good-share{
+
+}
+#goodsContainer .g-box .item-inner{
+    width: 588px;
+    float: left;
+    padding-right: 244px;
+    background: green;
+}
+#goodsContainer .g-box .item-ext{
+    width: 244px;
+    float: left;
+    margin-left: -244px;
+    overflow: hidden;
+    background: blue;
+    display: block;
+}
+

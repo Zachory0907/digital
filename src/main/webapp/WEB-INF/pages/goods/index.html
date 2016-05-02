@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="app" ng-controller="goodsController">
+<head>
+    <meta charset="UTF-8">
+    <title>某个商品</title>
+    #include("/WEB-INF/pages/tpl/header.vm")
+</head>
+<body>
+<div id="header">
+    <a href="#" target="_blank">您好，请登录</a> | <a href="#" target="_blank"
+                                                class="register">免费注册</a> | <a href="#" target="_blank">我的订单</a> | <a
+        href="#" target="_blank">个人中心</a> | <a href="#" target="_blank"
+                                               style="margin-right: 60px">购物车</a>
+</div>
+<div id="searcher"></div>
+<div id="goodsContainer">
+    <div class="g-box">
+        <div class="item-preview">
+            <div class="good-pic">
+                <img data-img="1" width="350" height="350" src="//img12.360buyimg.com/n1/jfs/t2197/252/1693354946/26360/ad4fdb5d/56d3fc26Na893e0f7.jpg" alt="三星 Galaxy S7 edge（G9350）32G版 星钻黑 移动联通电信4G手机 双卡双待 骁龙820手机" jqimg="//img12.360buyimg.com/n0/jfs/t2197/252/1693354946/26360/ad4fdb5d/56d3fc26Na893e0f7.jpg">
+            </div>
+            <div class="good-list"></div>
+            <div class="good-share"></div>
+        </div>
+        <div class="item-inner">
+            <div class="good-name"></div>
+            <div class="good-compare"></div>
+            <div class="good-summary"></div>
+            <div class="good-choose"></div>
+        </div>
+        <div class="item-ext">
+            <div class="brand"></div>
+            <div class="seller"></div>
+            <div class="seller-service"></div>
+            <div class="mall-service"></div>
+        </div>
+    </div>
+</div>
+<div id="extending"></div>
+#include("/WEB-INF/pages/tpl/footer.vm")
+</body>
+</html>
