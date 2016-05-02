@@ -2,37 +2,135 @@
 <html lang="zh-cn" ng-app="app" ng-controller="goodsController">
 <head>
     <meta charset="UTF-8">
-    <title>某个商品</title>
+    <title>商品详情</title>
     #include("/WEB-INF/pages/tpl/header.vm")
+    <script src="../js/goods/index.js"></script>
+    <link href="../css/goods/goods.css" rel="stylesheet">
 </head>
 <body>
-<div id="header">
-    <a href="#" target="_blank">您好，请登录</a> | <a href="#" target="_blank"
-                                                class="register">免费注册</a> | <a href="#" target="_blank">我的订单</a> | <a
-        href="#" target="_blank">个人中心</a> | <a href="#" target="_blank"
-                                               style="margin-right: 60px">购物车</a>
-</div>
-<div id="searcher"></div>
+ #include("/WEB-INF/pages/tpl/body.vm")
 <div id="goodsContainer">
     <div class="g-box">
         <div class="item-preview">
             <div class="good-pic">
-                <img data-img="1" width="350" height="350" src="//img12.360buyimg.com/n1/jfs/t2197/252/1693354946/26360/ad4fdb5d/56d3fc26Na893e0f7.jpg" alt="三星 Galaxy S7 edge（G9350）32G版 星钻黑 移动联通电信4G手机 双卡双待 骁龙820手机" jqimg="//img12.360buyimg.com/n0/jfs/t2197/252/1693354946/26360/ad4fdb5d/56d3fc26Na893e0f7.jpg">
+                <img width="350" height="350" ng-src={{bigNo}} />
             </div>
-            <div class="good-list"></div>
-            <div class="good-share"></div>
+            <div class="good-list">
+                <!-- <a href="javascript:;" class="spec-control" id="spec-forward"></a>
+                <a href="javascript:;" class="spec-control" id="spec-backward"></a> -->
+                <div class="good-items">
+                    <ul>
+                        <li><img alt="" src="../images/goods/small1.jpg"width="50" height="50"></li>
+                        <li><img alt="" src="../images/goods/small2.jpg" width="50" height="50"></li>
+                        <li><img alt="" src="../images/goods/small3.jpg" width="50" height="50"></li>
+                        <li><img alt="" src="../images/goods/small4.jpg" width="50" height="50"></li>
+                        <li><img alt="" src="../images/goods/small5.jpg" width="50" height="50"></li>
+                        <li><img alt="" src="../images/goods/small6.jpg" width="50" height="50"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="good-share">
+                <div class="good-msg">
+                    <span>商品编号：</span>
+                    <span>2385677</span>
+                </div>
+                <a href="#" style="padding-left: 65px;">
+                    <span class="follow-btn">关注商品</span>
+                </a>
+                <a href="#" style="padding-left: 80px;">
+                    <span class="share-btn">分享</span>
+                </a>
+                <div style="clear:both"></div>
+            </div>
         </div>
         <div class="item-inner">
-            <div class="good-name"></div>
-            <div class="good-compare"></div>
-            <div class="good-summary"></div>
-            <div class="good-choose"></div>
+            <div class="good-info">
+                <div class="good-name">
+                    <h1>三星 Galaxy S7 edge（G9350）32G版 星钻黑 移动联通电信4G手机 双卡双待 骁龙820手机</h1>
+                    <p>支持花呗0首付分期付款，支持白条12期免息活动</p>
+                    <a href="#">新品现货 多重大礼 原装正品 更多优惠！</a>
+                </div>
+                <div class="good-summary">
+                    <div class="prePrice">原价：<span>¥ 6000.00</span></div>
+                    <div class="nowPrice">现价：<span>¥ 5688.00</span></div>
+                    <div class="forSale">
+                    	优惠信息：
+                        <ul>
+                            <li>以下促销可在购物车任选其一:</li>
+                            <li><span class="h-red-bg">满赠</span> 满100.00元即赠热销商品，赠完即止，请在购物车点击领取 <a href="#">详情 >></a></li>
+                            <li><span class="h-red-bg">满额返券</span>买三星S7,送SK-II官方品牌899减100代金券，全场使用，点击领取 <a href="#">详情 >></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="good-choose">
+                    <ul>
+                        <li>选择颜色：
+                        	<input type="radio" value="雪晶白" ng-model="ys"/>雪晶白
+                        	<input type="radio" value="钛泽银" ng-model="ys"/>钛泽银
+                        	<input type="radio" value="铂光金" ng-model="ys"/>铂光金
+                        	<input type="radio" value="星钻黑" ng-model="ys"/>星钻黑
+                        </li>
+                        <li>选择版本：
+                        	<input type="radio" value="S7全网通" ng-model="bb"/>S7全网通
+                        	<input type="radio" value="S7移动联通4G" ng-model="bb"/>S7移动联通4G
+                        	<input type="radio" value="S7edge全网通" ng-model="bb"/>S7edge全网通
+                        </li>
+                        <li>购买方式：
+                        	<input type="radio" value="非合约机" ng-model="fs"/>非合约机
+                        	<input type="radio" value="联通合约机" ng-model="fs"/>联通合约机
+                        	<input type="radio" value="电信合约机" ng-model="fs"/>电信合约机
+                        </li>
+                        <li>数量：</li>
+                    </ul>
+                    <div class="confirm">
+                        <a href="javascropt:void(0)" ng-click="test()" class="buy">立即购买</a>
+                        <a href="javascropt:void(0)" ng-click="test()" class="add">加入购物车</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="item-ext">
-            <div class="brand"></div>
-            <div class="seller"></div>
-            <div class="seller-service"></div>
-            <div class="mall-service"></div>
+            <div class="ext-info">
+                <div class="brand">
+                    <a href="#" target="_blank">
+                        <img src="../images/goods/sum-logo.jpg" title="三星手机旗舰店">
+                    </a>
+                </div>
+                <div class="seller">
+                    <a href="#">三星手机旗舰店</a>
+                    <span class="h-red-bg" style="float: right;line-height: 18px;">Zach官方</span>
+                    <div style="clear:both"></div>
+                </div>
+                <div class="seller-service">
+                    <div class="comment">
+                        <dl>
+                            <dt>描述</dt>
+                            <dd class="tb-rate-higher">
+                                <a href="#" target="_blank">
+                                    4.9
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>服务</dt>
+                            <dd class="tb-rate-higher">
+                                <a href="#" target="_blank">
+                                    4.9
+                                </a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>物流</dt>
+                            <dd class="tb-rate-higher">
+                                <a href="#" target="_blank">
+                                    4.9
+                                </a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="mall-service"></div>
+            </div>
         </div>
     </div>
 </div>
