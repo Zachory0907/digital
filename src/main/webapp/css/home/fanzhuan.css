@@ -183,7 +183,7 @@ td, th {
 }
 
 @import url(http://fonts.googleapis.com/css?family=Lato:900);
-*, *:before, *:after {
+.letter, .letter:before, *:after {
     box-sizing: border-box;
 }
 

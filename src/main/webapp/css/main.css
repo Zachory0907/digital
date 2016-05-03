@@ -1,66 +1,164 @@
 * {
-	margin: 0px;
-	padding: 0px;
-	font-family: 微软雅黑;
-	font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    font-family: 微软雅黑;
+    font-size: 14px;
 }
 
 body {
-	margin: 0px;
-	padding: 0px;
-	font-family: 微软雅黑;
-	font-size: 14px;
+    margin: 0px;
+    padding: 0px;
+    font-family: 微软雅黑;
+    font-size: 14px;
 }
 
 #header {
-	background: #fcfcfc;
-	width: 100%;
-	height: 30px;
-	border: 1px solid #EBEBEB;
-	text-align: right;
+    background: #fcfcfc;
+    width: 100%;
+    height: 30px;
+    border: 1px solid #EBEBEB;
+    text-align: right;
 }
 
 #header a {
-	color: #333;
-	text-decoration: none;
-	font-size: 12px;
-	line-height:30px;
-	margin:0 20px;
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 30px;
+    margin: 0 20px;
 }
 
-#header a.register{
+#header a.register {
     color: #BB2C2C;
 }
 
-#header a:hover{
+#header a:hover {
     color: #bd0a01;
 }
 
+#searcher {
+    width: 93%;
+    margin: 0 auto;
+    box-sizing: inherit;
+}
+
+#searcher .logo {
+    float: left;
+    margin: 10px 0 0 50px;
+}
+
+#searcher .extend-mid {
+    float: left;
+    width: 230px;
+    border: 1px solid #fff;
+}
+
+#searcher .searchBox {
+    float: left;
+    border: 3px solid #EE9308;
+    width: 410px;
+    position: relative;
+    margin-top: 50px
+}
+
+#searcher .searchBox span {
+    display: inline-block;
+    background: rgb(248, 248, 248);
+    color: #999;
+    float: left;
+    height: 40px;
+    width: 80px;
+    line-height: 40px;
+    padding-left: 13px;
+}
+
+#searcher .searchBox span a {
+    text-decoration: none;
+    font-size: 12px;
+    background: url("../images/home/icons/down.png") no-repeat 95% 50%;
+    color: #EE9308;
+}
+
+#searcher .searchBox span a:hover {
+    background: url("../images/home/icons/up.png") no-repeat 95% 50%;
+    color: #FF5200;
+}
+
+#searcher .searchBox .SearchForm {
+    height: 40px;
+}
+
+#searcher .searchBox .SearchForm .txt {
+    width: 240px;
+    border: none;
+    padding-top: 2px;
+    color: #999;
+    text-indent: 20px;
+    background: #fff url("../images/home/icons/Serach.png") no-repeat left center;
+    height: 40px;
+}
+
+#searcher .searchBox .SearchForm .txt:focus {
+    outline: none
+}
+
+#searcher .searchBox .SearchForm .smt {
+    border: 0;
+    width: 84px;
+    background: #EE9308;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    height: 40px;
+}
+
+#searcher .searchBox .SearchForm .smt:focus {
+    outline: none
+}
+
+#searcher .senior {
+    float: left;
+    font-size: 12px;
+    font-weight: 500;
+    width:100px;
+    margin: 54px 0 0 15px;
+    color:#999;
+}
+#searcher .senior a{
+    font-size:14px;
+    color:#ffa500
+}
+
+#searcher .extend-right {
+    float: left;
+    border: 1px solid black;
+}
+
 #copyright {
-	width: 960px;
-	margin: 20px auto;
-	padding: 8px 0;
-	font-size: 12px;
-	line-height: 28px;
-	color: #333;
-	text-align: center;
-	overflow: hidden;
-	clear: both;
+    width: 960px;
+    margin: 20px auto;
+    padding: 8px 0;
+    font-size: 12px;
+    line-height: 28px;
+    color: #333;
+    text-align: center;
+    overflow: hidden;
+    clear: both;
 }
 
 #copyright .en {
-	font-family: Arial;
-	font-size: 12px;
+    font-family: Arial;
+    font-size: 12px;
 }
 
 #copyright a {
-	color: #333;
-	text-decoration: none;
-	font-size: 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 12px;
 }
 
 #copyright a:hover {
-	color: #bd0a01;
-	text-decoration: underline;
-	font-size: 12px;
+    color: #bd0a01;
+    text-decoration: underline;
+    font-size: 12px;
 }

@@ -10,4 +10,8 @@ public class HomeController extends BaseController{
 	public void index() {
 		render("index.html");
 	}
+	
+	public void login() {
+		render("login.html");
+	}
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn" ng-app="app" ng-controller="loginController">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <script src="../js/jquerys/jquery-1.7.2.min.js"></script>
+    <script src="../js/import/angular.min.js"></script>
+    <link href="../css/main.css" rel="stylesheet">
+    <link href="../css/home/login.css" rel="stylesheet">
+    <script src="../js/home/login.js"></script>
+</head>
+<body>
+<div id="Main">
+    <div id="Nav">
+        <div class="logo">
+            <img src="../images/home/login/logo_9.png" alt="" width="50px" style="margin-top:15px"/>
+            <a href="#" style="position: relative"><img src="../images/home/login/logo_8.png" alt="" style="position: absolute; top:-39px; left:6px;"/></a>
+        </div>
+    </div>
+    <div id="Content">
+        <div class="Ads">
+            <img src="../images/home/login/content_bg.png" width="400px" height="240px">
+        </div>
+        <div class="C_box">
+            <div class="choose">
+                <ul>
+                    <li><a href="#" class="ys">账号密码登录</a></li>
+                    <li><a href="#">快速登陆</a></li>
+                </ul>
+                <p class="Line"></p>
+            </div>
+            <div class="Method">
+                <div class="C_txt">
+                    <span>用户名：</span>
+                    <input type="text" name="username" id="username">
+                </div>
+                <div class="C_txt">
+                    <span>密码：</span>
+                    <input type="password" name="password" id="password">
+                </div>
+                <div class="btn">
+                    <input type="button" value="登    录" onclick="submit()" class="sub">
+                    <span class="line line_top"></span>
+                    <span class="line line_right"></span>
+                    <span class="line line_bottom"></span>
+                    <span class="line line_left"></span>
+                </div>
+                <div class="Tip"><em>忘记密码？点击<a href="#">这里</a></em><span class="sanjiao"></span></div>
+            </div>
+            <div class="Method" style="display:none">
+                <div class="EWM"><img src="../images/home/login/login.png" width="150px" height="150px"></div>
+                <p class="p1" style="text-align:center; margin-top:5px">手机扫码 安全登录</p>
+
+                <p class="p2" style="text-align:center; margin-top:10px">使用手机客户端扫描二维码</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

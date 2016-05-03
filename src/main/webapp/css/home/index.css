@@ -1,6 +1,9 @@
+*{
+	    box-sizing: border-box;
+}
 #news {
     width: 100%;
-    position: relative
+    position: relative;
 }
 
 #news ul {
@@ -49,6 +52,7 @@
     display: none;
     padding-top: 15px;
     padding-left: 10px;
+    box-sizing: border-box;
 }
 
 #news #Con .Title ul li a.ys {
@@ -60,6 +64,7 @@
     height: 188px;
     padding: 10px 4px;
     float: left;
+
 }
 
 #news .Content dl dt {
