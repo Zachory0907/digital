@@ -14,4 +14,8 @@ public class HomeController extends BaseController{
 	public void login() {
 		render("login.html");
 	}
+	
+	public void register() {
+		render("register.html");
+	}
 }

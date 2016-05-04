@@ -5,9 +5,75 @@
     <title>购物车</title>
     #include("/WEB-INF/pages/tpl/header.vm")
     <script src="../js/cart/index.js"></script>
+    <link href="../css/cart/cart.css" rel="stylesheet">
 </head>
 <body ng-app="app" ng-controller="cartController">
     #include("/WEB-INF/pages/tpl/body.vm")
+    <div id="carts">
+        <div class="explain"></div>
+        <div class="container">
+            <ul class="stores">
+                <li class="eachStore">
+                    <div class="storeName">三星专营店</div>
+                    <table class="items">
+                        <tr class="eachitem">
+                            <td class="check"><input type="checkbox" style="margin-left:15px"/></td>
+                            <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
+                            <td class="itemName">
+                                <p><a href="#">三星 Galaxy S7 edge（G9350）</a></p>
+                                <p>哈哈</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="count">
+                                <p>1</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="operation">
+                                <p><a href="#">删除</a></p>
+                                <p><a href="#">移入收藏夹</a></p>
+                            </td>
+                        </tr>
+                        <tr class="eachitem">
+                            <td class="check"><input type="checkbox" style="margin-left: 15px"/></td>
+                            <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
+                            <td class="itemName">
+                                <p><a href="#">三星UA55JU50SWJXXZ</a></p>
+                                <p>哈哈</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="count">
+                                <p>1</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="operation">
+                                <p><a href="#">删除</a></p>
+                                <p><a href="#">移入收藏夹</a></p>
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+                <li class="eachStore">
+                    <div class="storeName">Zachory自营店</div>
+                    <div class="items">
+                        <div class="eachitem">
+                            <a href="#">OPPO R9</a><span>{{child.value}}</span>
+                        </div>
+                        <div class="eachitem">
+                            <a href="#">苹果 MacBook Pro </a><span>{{child.value}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
     #include("/WEB-INF/pages/tpl/footer.vm")
 </body>
 </html>

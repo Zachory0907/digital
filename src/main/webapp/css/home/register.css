@@ -1,0 +1,56 @@
+body {
+    font-family: "microsoft yahei", "微软雅黑", arial;
+    font-size: 16px;
+    background: url("../../images/home/login/register-bj.png");
+}
+
+#reg {
+    background: url("../../images/home/login/register-bj3.png");
+    width:600px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#reg .reg-input {
+	margin:0 6%;
+    padding: 100px 0px;
+}
+
+#reg .reg-input textarea{
+    overflow: hidden;
+    border:0;
+    background-image: none;
+    font: 14px Arial, "微软雅黑";
+    border-radius: 4px;
+    background: #EEF1E9;
+    resize: none;
+    width: 266px;
+    height: 60px;
+}
+
+#reg .reg-input table {
+
+}
+
+#reg .reg-input table tr {
+
+}
+
+#reg .reg-input table tr td.left {
+	color: #438860;
+    width: 150px;
+    height: 40px;
+    line-height: 10px;
+    text-align: right;
+}
+
+#reg .reg-input table tr td input {
+	border:0;
+    background-image: none;
+	font: 14px Arial, "微软雅黑";
+    width: 240px;
+    height: 30px;
+    padding: 0 15px;
+    border-radius: 4px;
+    background: #EEF1E9;
+}

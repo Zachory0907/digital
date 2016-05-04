@@ -1,0 +1,60 @@
+#carts{
+    width: 88%;
+    margin: 0 auto;
+}
+#carts .explain{}
+#carts .container{}
+#carts .container .stores{}
+#carts .container ul{
+    list-style-type: none;
+}
+#carts .container ul.stores{}
+#carts .container ul li{
+}
+#carts .container ul li.eachStore{}
+#carts .container ul li.eachStore .storeName{
+    padding: 0 0 5px 32px;
+}
+#carts .container ul li table{
+    width: 100%;
+}
+#carts .container ul li table tr{
+}
+#carts .container ul li table tr td{
+}
+#carts .container ul li table tr td p{
+    padding: 10px 0;
+}
+#carts .container ul li table tr td.check{
+    width: 30px;
+}
+#carts .container ul li table tr td.logo{
+    width: 100px;
+    height: 100px;
+}
+#carts .container ul li table tr td.itemName{
+    padding-left: 20px;
+    width: 400px;
+    height: 100px;
+}
+#carts .container ul li table tr td.itemName a{
+    text-decoration: none;
+}
+#carts .container ul li table tr td.price{
+    text-align: center;
+    width: 200px;
+    height: 100px;
+}
+#carts .container ul li table tr td.count{
+    text-align: center;
+    width: 200px;
+    height: 100px;
+}
+#carts .container ul li table tr td.operation{
+	padding-left: 20px;
+    width: 200px;
+    height: 100px;
+}
+#carts .container ul li table tr td.operation a{
+    text-decoration: none;
+}

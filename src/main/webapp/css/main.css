@@ -38,13 +38,13 @@ body {
 
 #searcher {
     width: 93%;
-    margin: 0 auto;
+    margin: 10px auto;
     box-sizing: inherit;
 }
 
 #searcher .logo {
     float: left;
-    margin: 10px 0 0 50px;
+    margin: 25px 0 0 50px;
 }
 
 #searcher .extend-mid {
