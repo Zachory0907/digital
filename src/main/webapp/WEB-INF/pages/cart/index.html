@@ -10,18 +10,31 @@
 <body ng-app="app" ng-controller="cartController">
     #include("/WEB-INF/pages/tpl/body.vm")
     <div id="carts">
-        <div class="explain"></div>
+        <div class="explain">
+            <div class="all">全部商品</div>
+            <table>
+                <tr style="height: 70px;">
+                    <td style="width: 50px;"><input type="checkbox"/></td>
+                    <td style="width: 450px;">商品</td>
+                    <td style="width: 175px;">商品单价（元）</td>
+                    <td style="width: 145px;">数量</td>
+                    <td style="width: 235px;">小计（元）</td>
+                    <td style="width: 40px;">操作</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
         <div class="container">
             <ul class="stores">
                 <li class="eachStore">
-                    <div class="storeName">三星专营店</div>
+                    <div class="storeName"><span>店铺：三星专营店</span></div>
                     <table class="items">
                         <tr class="eachitem">
                             <td class="check"><input type="checkbox" style="margin-left:15px"/></td>
                             <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
                             <td class="itemName">
                                 <p><a href="#">三星 Galaxy S7 edge（G9350）</a></p>
-                                <p>哈哈</p>
+                                <p class="bz">哈哈</p>
                             </td>
                             <td class="price">
                                 <p>¥ 5688.00</p>
@@ -42,7 +55,7 @@
                             <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
                             <td class="itemName">
                                 <p><a href="#">三星UA55JU50SWJXXZ</a></p>
-                                <p>哈哈</p>
+                                <p class="bz">哈哈</p>
                             </td>
                             <td class="price">
                                 <p>¥ 5688.00</p>
@@ -61,17 +74,62 @@
                     </table>
                 </li>
                 <li class="eachStore">
-                    <div class="storeName">Zachory自营店</div>
-                    <div class="items">
-                        <div class="eachitem">
-                            <a href="#">OPPO R9</a><span>{{child.value}}</span>
-                        </div>
-                        <div class="eachitem">
-                            <a href="#">苹果 MacBook Pro </a><span>{{child.value}}</span>
-                        </div>
-                    </div>
+                    <div class="storeName"><span>店铺：Zachory自营店</span></div>
+                    <table class="items">
+                        <tr class="eachitem">
+                            <td class="check"><input type="checkbox" style="margin-left:15px"/></td>
+                            <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
+                            <td class="itemName">
+                                <p><a href="#">OPPO R9</a></p>
+                                <p class="bz">哈哈</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="count">
+                                <p>1</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="operation">
+                                <p><a href="#">删除</a></p>
+                                <p><a href="#">移入收藏夹</a></p>
+                            </td>
+                        </tr>
+                        <tr class="eachitem">
+                            <td class="check"><input type="checkbox" style="margin-left: 15px"/></td>
+                            <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
+                            <td class="itemName">
+                                <p><a href="#">苹果 MacBook Pro </a></p>
+                                <p class="bz">哈哈</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="count">
+                                <p>1</p>
+                            </td>
+                            <td class="price">
+                                <p>¥ 5688.00</p>
+                            </td>
+                            <td class="operation">
+                                <p><a href="#">删除</a></p>
+                                <p><a href="#">移入收藏夹</a></p>
+                            </td>
+                        </tr>
+                    </table>
                 </li>
             </ul>
+        </div>
+        <div class="total">
+            <table>
+                <tr>
+                    <td>已选商品0件</td>
+                    <td class="showPrice">共计：¥ 5688.00</td>
+                    <td class="toPay"><a href="#">去结算</a></td>
+                </tr>
+            </table>
         </div>
     </div>
     #include("/WEB-INF/pages/tpl/footer.vm")
