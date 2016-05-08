@@ -1,4 +1,4 @@
-angular.module('app', []).controller('payController', function($scope, $http){
+var app = angular.module('app', []).controller('payController', function($scope, $http){
     $scope.msg = "欢迎";
     $scope.provinces = ["北京市","山西省","山东省","河南省","河北省","湖南省"];
     $scope.province = "";
