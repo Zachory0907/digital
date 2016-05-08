@@ -10,37 +10,45 @@
 </head>
 <body>
 <div id="reg">
-    <div class="reg-input">
+    <div class="reg-input" ng-show="send==0">
         <table>
             <tr>
-                <td class="left">用户名：</td>
-                <td><input type="text"/></td>
+                <td class="left">昵称：</td>
+                <td><input type="text" ng-model="user.NICKNAME"/></td>
             </tr>
             <tr>
                 <td class="left">密码：</td>
-                <td><input type="password"/></td>
+                <td><input type="password" ng-model="user.PASSWORD"/></td>
             </tr>
             <tr>
                 <td class="left">确认密码：</td>
-                <td><input type="password"/></td>
+                <td><input type="password" ng-model="confirmPass"/></td>
             </tr>
             <tr>
                 <td class="left">手机号：</td>
-                <td><input type="tel"/></td>
+                <td><input type="tel" ng-model="user.TEL"/></td>
             </tr>
             <tr>
                 <td class="left">邮箱：</td>
-                <td><input type="email"/></td>
+                <td><input type="text" ng-model="user.EMAIL"/></td>
             </tr>
             <tr>
                 <td class="left">设置头像：</td>
-                <td><input type="file" style="line-height: 30px"/></td>
+                <td><input type="file" style="line-height: 30px" ng-model="user.HEAD"/></td>
             </tr>
-            <tr>
+            <!--<tr>
                 <td class="left">设置常用收货地址：</td>
                 <td><textarea name="" id="" cols="36" rows="5"></textarea></td>
+            </tr>-->
+            <tr>
+                <td class="left"><a href="javascript:void(0)"><img ng-click="regist()" src="../images/home/login/toReg.png" alt=""/></a></td>
+                <td><a href="#"><img src="../images/home/login/toReg.png" alt=""/></a></td>
             </tr>
+
         </table>
+    </div>
+    <div class="reg-input" ng-show="send==1">
+    	{{mailMessage}}
     </div>
 </div>
 <div id="extending"></div>

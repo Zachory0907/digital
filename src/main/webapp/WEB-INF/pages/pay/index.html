@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>支付</title>
+    #include("/WEB-INF/pages/tpl/header.vm")
+    <script src="../js/pay/index.js"></script>
+    <link href="../css/pay/pay.css" rel="stylesheet">
+</head>
+<body ng-app="app" ng-controller="payController">
+#include("/WEB-INF/pages/tpl/body.vm")
+<div id="pay">
+    <div class="addr">
+        <h3>收货人信息</h3>
+        <table>
+            <tr class="thead">
+                <th rowspan="2"></th>
+                <th rowspan="2">收货人</th>
+                <th colspan="4">地址</th>
+                <th rowspan="2">联系方式</th>
+                <th rowspan="2">邮编</th>
+                <th rowspan="2">操作</th>
+            </tr>
+            <tr class="thead">
+                <td>省</td>
+                <td>市</td>
+                <td>区/县</td>
+                <td>详细地址</td>
+            </tr>
+            <tr class="tbody">
+                <td class="chose"><input type="radio"/></td>
+                <td><input type="text" class="shr"/></td>
+                <td><select ng-model="province"
+                            ng-options="p for p in provinces">
+                    </select>
+                </td>
+                <td><select ng-model="city"
+                            ng-options="c for c in citys">
+                    </select>
+                </td>
+                <td><select ng-model="county"
+                            ng-options="co for co in counties">
+                    </select>
+                </td>
+                <td><input type="text" class="xxdz"/></td>
+                <td><input type="text" class="tel"/></td>
+                <td><input type="text" class="mail"/></td>
+                <td class="ope"><a href="#">移除</a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="payWay">
+        <h3>付款方式</h3>
+        <table>
+            <tr>
+                <td class="select"><input type="radio"/></td>
+                <td class="way">货到付款</td>
+            </tr>
+            <tr>
+                <td class="select"><input type="radio"/></td>
+                <td>支付宝付款</td>
+            </tr>
+            <tr>
+                <td class="select"><input type="radio"/></td>
+                <td class="way">余额宝付款</td>
+            </tr>
+            <tr>
+                <td class="select"><input type="radio"/></td>
+                <td class="way">微信付款</td>
+            </tr>
+            <tr>
+                <td class="select"><input type="radio"/></td>
+                <td class="way">银行卡付款</td>
+            </tr>
+        </table>
+    </div>
+    <div class="makeSure">
+        <h3>确认订单</h3>
+        <table>
+            <tr class="head">
+                <th>商家</th>
+                <th>商品</th>
+                <th>数量</th>
+                <th>价格</th>
+            </tr>
+            <tr class="cont">
+                <td style="width: 200px;">三星专卖店</td>
+                <td style="width: 500px">三星 Galaxy S7 edge（G9350）</td>
+                <td style="width: 200px">1</td>
+                <td style="width: 300px">5688.00</td>
+            </tr>
+            <tr class="fot">
+                <td colspan="3" class="sh">收货地址：</td>
+                <td colspan="3" class="zf"><a href="#">支付</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+#include("/WEB-INF/pages/tpl/footer.vm")
+</body>
+</html>

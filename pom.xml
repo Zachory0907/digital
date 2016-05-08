@@ -82,6 +82,20 @@
 			<artifactId>velocity</artifactId>
 			<version>1.7</version>
 		</dependency>
+		
+		<!-- 邮箱Mail api -->
+		<dependency>
+			<groupId>org.digital.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>0.1</version>
+		</dependency>
+		
+		<!-- 邮箱Activation api -->
+		<dependency>
+			<groupId>org.digital.mail</groupId>
+			<artifactId>activation</artifactId>
+			<version>0.1</version>
+		</dependency>
 
 	</dependencies>
 	<build>

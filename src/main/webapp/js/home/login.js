@@ -1,11 +1,10 @@
-angular.module('app', []).controller('loginController', function($scope, $http){
+var app = angular.module('app', []).controller('loginController', function($scope, $http){
 
 	$scope.msg = "欢迎";
-	$scope.user = {};
+	$scope.u = {};
 
 
 	window.onresize = function(){
-		debugger;
 		var Height = document.documentElement.clientHeight;//获得可视区的高度
 		var Main = document.getElementById("Main");
 		Main.style.height = Height+"px";//将可视区的高度给了Main
@@ -22,29 +21,31 @@ angular.module('app', []).controller('loginController', function($scope, $http){
 		$(this).find("a").addClass("ys").parent().siblings().find("a").removeClass("ys");
 	});
 
-/*	$scope.submit = function() {
-		$("#Content .C_box .Method .Tip").show();
-		var username = $("#username").val();
-		var password = $("#password").val();
-
-		if (isEmpty(username)) {
+	$scope.submit = function() {
+		//$("#Content .C_box .Method .Tip").show();
+		var user = $scope.u;
+		if (isEmpty(user.logname)) {
 			alert("请输入用户名");
 			$("#username").focus();
 			return false;
 		}
-		if (isEmpty(password)) {
+		if (isEmpty(user.logpass)) {
 			alert("请输入密码");
 			$("#password").focus();
 			return false;
 		}
-		$http.post("./login", $scope.user).success(function(data){
-			alert("登录成功！")
+		
+		$http.post("./loginValidate", user).success(function(data){
+			if (data.status == "ok")
+				location.href = "/digital/home/index";
+			else
+				alert("登录失败！");
 		}).error(function(){
-			alert("登录失败！");
+			alert("网络错误！");
 		});
 	}
 
-	$scope.isEmpty = function(val) {
+	var isEmpty = function(val) {
 		val = $.trim(val);
 		if (val == null) {
 			return true;
@@ -59,5 +60,5 @@ angular.module('app', []).controller('loginController', function($scope, $http){
 			return true;
 		}
 		return false;
-	}*/
+	}
 });

@@ -1,4 +1,4 @@
-angular.module('app', []).controller('goodsController', function($scope, $http){
+var app = angular.module('app', []).controller('goodsController', function($scope, $http){
 	$scope.msg = "欢迎";
 	$scope.bigNo = "../images/goods/big2.jpg";
 	$scope.ys="";

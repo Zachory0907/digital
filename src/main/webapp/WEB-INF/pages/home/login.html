@@ -32,14 +32,14 @@
             <div class="Method">
                 <div class="C_txt">
                     <span>用户名：</span>
-                    <input type="text" name="username" id="username">
+                    <input type="text" ng-model="u.logname" id="username">
                 </div>
                 <div class="C_txt">
                     <span>密码：</span>
-                    <input type="password" name="password" id="password">
+                    <input type="password" ng-model="u.logpass" id="password">
                 </div>
                 <div class="btn">
-                    <input type="button" value="登    录" onclick="submit()" class="sub">
+                    <input type="button" value="登    录" ng-click="submit()" class="sub">
                     <span class="line line_top"></span>
                     <span class="line line_right"></span>
                     <span class="line line_bottom"></span>
