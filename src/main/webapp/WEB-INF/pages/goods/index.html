@@ -5,6 +5,7 @@
     <title>商品详情</title>
     #include("/WEB-INF/pages/tpl/header.vm")
     <script src="../js/goods/index.js"></script>
+    <script src="../js/ext/queue.js"></script>
     <link href="../css/goods/goods.css" rel="stylesheet">
 </head>
 <body>
@@ -13,26 +14,21 @@
     <div class="g-box">
         <div class="item-preview">
             <div class="good-pic">
-                <img width="350" height="350" ng-src={{bigNo}} />
+                <img width="350" height="350" ng-src="{{bigNo}}" />
             </div>
             <div class="good-list">
                 <!-- <a href="javascript:;" class="spec-control" id="spec-forward"></a>
                 <a href="javascript:;" class="spec-control" id="spec-backward"></a> -->
                 <div class="good-items">
                     <ul>
-                        <li><img alt="" src="../images/goods/small1.jpg"width="50" height="50"></li>
-                        <li><img alt="" src="../images/goods/small2.jpg" width="50" height="50"></li>
-                        <li><img alt="" src="../images/goods/small3.jpg" width="50" height="50"></li>
-                        <li><img alt="" src="../images/goods/small4.jpg" width="50" height="50"></li>
-                        <li><img alt="" src="../images/goods/small5.jpg" width="50" height="50"></li>
-                        <li><img alt="" src="../images/goods/small6.jpg" width="50" height="50"></li>
+                        <li ng-repeat="p in showPics"><img alt="" ng-src="{{p}}" width="50" height="50" ng-mouseover="s2b(this)"></li>
                     </ul>
                 </div>
             </div>
             <div class="good-share">
                 <div class="good-msg">
                     <span>商品编号：</span>
-                    <span>2385677</span>
+                    <span>{{good.G_ID}}</span>
                 </div>
                 <a href="#" style="padding-left: 65px;">
                     <span class="follow-btn">关注商品</span>
@@ -46,42 +42,30 @@
         <div class="item-inner">
             <div class="good-info">
                 <div class="good-name">
-                    <h1>三星 Galaxy S7 edge（G9350）32G版 星钻黑 移动联通电信4G手机 双卡双待 骁龙820手机</h1>
-                    <p>支持花呗0首付分期付款，支持白条12期免息活动</p>
-                    <a href="#">新品现货 多重大礼 原装正品 更多优惠！</a>
+                    <h1>{{good.G_TITLE}}</h1>
+                    <p>{{good.G_PAY_SUPPORT}}</p>
+                    <a href="#">{{good.G_ADV}}</a>
                 </div>
                 <div class="good-summary">
-                    <div class="prePrice">原价：<span>¥ 6000.00</span></div>
-                    <div class="nowPrice">现价：<span>¥ 5688.00</span></div>
+                    <div class="prePrice">原价：<span>¥ {{good.G_COST_ORI}}</span></div>
+                    <div class="nowPrice">现价：<span>¥ {{good.G_COST}}</span></div>
                     <div class="forSale">
                     	优惠信息：
-                        <ul>
-                            <li>以下促销可在购物车任选其一:</li>
-                            <li><span class="h-red-bg">满赠</span> 满100.00元即赠热销商品，赠完即止，请在购物车点击领取 <a href="#">详情 >></a></li>
-                            <li><span class="h-red-bg">满额返券</span>买三星S7,送SK-II官方品牌899减100代金券，全场使用，点击领取 <a href="#">详情 >></a></li>
+                    	{{good.G_DISCONT.title}}:
+                        <ul ng-repeat="c in good.G_DISCONT.cont">
+                            <li><span class="h-red-bg">{{c.type}}</span> {{c.desc}} <a href="#">详情 >></a></li>
+                            <!-- <li><span class="h-red-bg">满额返券</span>买三星S7,送SK-II官方品牌899减100代金券，全场使用，点击领取 <a href="#">详情 >></a></li> -->
                         </ul>
                     </div>
                 </div>
                 <div class="good-choose">
                     <ul>
-                        <li>选择颜色：
-                        	<input type="radio" value="雪晶白" ng-model="ys"/>雪晶白
-                        	<input type="radio" value="钛泽银" ng-model="ys"/>钛泽银
-                        	<input type="radio" value="铂光金" ng-model="ys"/>铂光金
-                        	<input type="radio" value="星钻黑" ng-model="ys"/>星钻黑
+                        <li ng-repeat="opt in good.G_OPTIONS">
+                        	{{opt.title}}:
+                        	<span ng-repeat="o in opt.opts"><input type="radio" value="{{o.price}}" name="{{o.name}}" ng-click="calcuTotal(o.price)"/>{{o.type}}</span>
                         </li>
-                        <li>选择版本：
-                        	<input type="radio" value="S7全网通" ng-model="bb"/>S7全网通
-                        	<input type="radio" value="S7移动联通4G" ng-model="bb"/>S7移动联通4G
-                        	<input type="radio" value="S7edge全网通" ng-model="bb"/>S7edge全网通
-                        </li>
-                        <li>购买方式：
-                        	<input type="radio" value="非合约机" ng-model="fs"/>非合约机
-                        	<input type="radio" value="联通合约机" ng-model="fs"/>联通合约机
-                        	<input type="radio" value="电信合约机" ng-model="fs"/>电信合约机
-                        </li>
-                        <li>数量：</li>
-                        <li>总计：</li>
+                        <li>数量：<input type="text" ng-model="number" type="number" ng-change="calcuTotal(0)"></li>
+                        <li>总计：{{totalPrice}}</li>
                     </ul>
                     <div class="confirm">
                         <a href="javascropt:void(0)" ng-click="test()" class="buy">立即购买</a>
@@ -94,12 +78,13 @@
             <div class="ext-info">
                 <div class="brand">
                     <a href="#" target="_blank">
-                        <img src="../images/goods/sum-logo.jpg" title="三星手机旗舰店">
+                        <!-- <img src="../images/goods/sum-logo.jpg" title="三星手机旗舰店"> -->
+                        <img ng-src={{shop.S_LOGO}} title="三星手机旗舰店">
                     </a>
                 </div>
                 <div class="seller">
-                    <a href="#">三星手机旗舰店</a>
-                    <span class="h-red-bg" style="float: right;line-height: 18px;">Zach官方</span>
+                    <a href="{{shop.S_HOME}}">{{shop.S_NAME}}</a>
+                    <span class="h-red-bg" style="float: right;line-height: 18px;">{{shop.S_BELONG}}</span>
                     <div style="clear:both"></div>
                 </div>
                 <div class="seller-service">
@@ -108,7 +93,7 @@
                             <dt>描述</dt>
                             <dd class="tb-rate-higher">
                                 <a href="#" target="_blank">
-                                    4.9
+                                    {{shop.S_DES_SCORE}}
                                 </a>
                             </dd>
                         </dl>
@@ -116,7 +101,7 @@
                             <dt>服务</dt>
                             <dd class="tb-rate-higher">
                                 <a href="#" target="_blank">
-                                    4.9
+                                    {{shop.S_SERVICE_SCORE}}
                                 </a>
                             </dd>
                         </dl>
@@ -124,7 +109,7 @@
                             <dt>物流</dt>
                             <dd class="tb-rate-higher">
                                 <a href="#" target="_blank">
-                                    4.9
+                                    {{shop.S_LOGISTICS_SCORE}}
                                 </a>
                             </dd>
                         </dl>
