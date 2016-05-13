@@ -61,10 +61,10 @@
                 <div class="good-choose">
                     <ul>
                         <li ng-repeat="opt in good.G_OPTIONS">
-                        	{{opt.title}}:
-                        	<span ng-repeat="o in opt.opts"><input type="radio" value="{{o.price}}" name="{{o.name}}" ng-click="calcuTotal(o.price)"/>{{o.type}}</span>
-                        </li>
-                        <li>数量：<input type="text" ng-model="number" type="number" ng-change="calcuTotal(0)"></li>
+                        {{opt.title}}:
+                        <span ng-repeat="o in opt.opts"><input type="radio" value="{{o.price}}" name="{{o.name}}" ng-click="calcuTotal(o)"/>{{o.type}}</span>
+                    </li>
+                        <li>数量：<input type="text" ng-model="number" type="number" ng-change="calcuTotal()"></li>
                         <li>总计：{{totalPrice}}</li>
                     </ul>
                     <div class="confirm">
