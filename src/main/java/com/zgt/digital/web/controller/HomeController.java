@@ -9,6 +9,7 @@ import com.zgt.digital.util.Consts;
 import com.zgt.digital.util.JSONUtil;
 import com.zgt.digital.util.MailUitls;
 import com.zgt.digital.util.UUID;
+import com.zgt.digital.util.Utils;
 
 @ControllerBind(controllerKey = "/home", viewPath = Consts.VIEW_PATH + "/home")
 public class HomeController extends BaseController{
@@ -64,11 +65,12 @@ public class HomeController extends BaseController{
 		Record rec = JSONUtil.parseRecord(dataText);
 		String logname = rec.get("logname");
 		String logpass = rec.get("logpass");
-		if(Login.loginValidate(logname, logpass)){
+		Record user = Login.loginValidate(logname, logpass);
+		if(user!=null){
+			Utils.setLogin(this, logname, user.getInt("U_ID"));
 			renderSuccess();
 		}else{
 			renderError();
 		}
 	}
-	
 }

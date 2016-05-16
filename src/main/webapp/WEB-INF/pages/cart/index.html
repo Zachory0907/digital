@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html lang="zh-cn" ng-app="app" ng-controller="cartController">
 <head>
     <meta charset="UTF-8">
-    <title>购物车</title>
+    <title>{{TYPENAME}}</title>
     #include("/WEB-INF/pages/tpl/header.vm")
     <script src="../js/cart/index.js"></script>
+    <script src="../js/ext/queue.js"></script>
     <link href="../css/cart/cart.css" rel="stylesheet">
 </head>
-<body ng-app="app" ng-controller="cartController">
+<body>
     #include("/WEB-INF/pages/tpl/body.vm")
     <div id="carts">
         <div class="explain">
@@ -26,54 +27,33 @@
         </div>
         <div class="container">
             <ul class="stores">
-                <li class="eachStore">
-                    <div class="storeName"><span>店铺：三星专营店</span></div>
+                <li class="eachStore" ng-repeat="goods in allGoods">
+                    <div class="storeName"><span>{{goods.goods[0].S_NAME}}</span></div>
                     <table class="items">
-                        <tr class="eachitem">
-                            <td class="check"><input type="checkbox" style="margin-left:15px"/></td>
-                            <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
+                        <tr class="eachitem" ng-repeat="good in goods.goods">
+                            <td class="check"><input type="checkbox" ng-model="good.checked" ng-change="chooseGood()" style="margin-left:15px"/></td>
+                            <td class="logo"><img ng-src="{{good.LOGO}}.jpg" alt="" style="padding:10px" width="80px" height="80px"/></td>
                             <td class="itemName">
-                                <p><a href="#">三星 Galaxy S7 edge（G9350）</a></p>
+                                <p><a href="javascript:void(0)" ng-click="toGood(this)">{{good.TITLE}}</a></p>
                                 <p class="bz">哈哈</p>
                             </td>
                             <td class="price">
-                                <p>¥ 5688.00</p>
+                                <p>¥ {{good.COST}}</p>
                             </td>
                             <td class="count">
-                                <p>1</p>
+                                <p>{{good.NUMBER}}</p>
                             </td>
                             <td class="price">
-                                <p>¥ 5688.00</p>
+                                <p>¥ {{good.PRICE}}</p>
                             </td>
                             <td class="operation">
-                                <p><a href="#">删除</a></p>
-                                <p><a href="#">移入收藏夹</a></p>
-                            </td>
-                        </tr>
-                        <tr class="eachitem">
-                            <td class="check"><input type="checkbox" style="margin-left: 15px"/></td>
-                            <td class="logo"><img src="../images/cart/cart-small-1.jpg" alt="" style="padding:10px"/></td>
-                            <td class="itemName">
-                                <p><a href="#">三星UA55JU50SWJXXZ</a></p>
-                                <p class="bz">哈哈</p>
-                            </td>
-                            <td class="price">
-                                <p>¥ 5688.00</p>
-                            </td>
-                            <td class="count">
-                                <p>1</p>
-                            </td>
-                            <td class="price">
-                                <p>¥ 5688.00</p>
-                            </td>
-                            <td class="operation">
-                                <p><a href="#">删除</a></p>
-                                <p><a href="#">移入收藏夹</a></p>
+                                <p><a href="javascript:void(0)" ng-click="deleteIt(this)">删除</a></p>
+                                <p><a href="javascript:void(0)" ng-click="likeIt(this)">移入收藏夹</a></p>
                             </td>
                         </tr>
                     </table>
                 </li>
-                <li class="eachStore">
+                <!--<li class="eachStore">
                     <div class="storeName"><span>店铺：Zachory自营店</span></div>
                     <table class="items">
                         <tr class="eachitem">
@@ -119,14 +99,14 @@
                             </td>
                         </tr>
                     </table>
-                </li>
+                </li>-->
             </ul>
         </div>
-        <div class="total">
+        <div class="total" ng-show="TYPE==0">
             <table>
                 <tr>
-                    <td>已选商品0件</td>
-                    <td class="showPrice">共计：¥ 5688.00</td>
+                    <td>已选商品{{chooseNum}}件</td>
+                    <td class="showPrice">共计：¥ {{choosePrice}}</td>
                     <td class="toPay"><a href="#">去结算</a></td>
                 </tr>
             </table>

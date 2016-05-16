@@ -38,7 +38,6 @@ var app = angular.module('app', []).controller('registerController', function($s
 		}else if(u.PASSWORD != $scope.confirmPass){
 			alert("两次密码不一致！");
 		}else{
-			debugger;
 			$http.post("./regist", u).success(
 				function(data) {
 					sendEmail(data);

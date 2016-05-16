@@ -1,4 +1,6 @@
-var app = angular.module('app', []).controller('goodsController', function ($scope, $http, queue) {
+var app = angular.module('app', []).controller(
+		'goodsController',
+		function($scope, $http, queue) {
     $scope.msg = "欢迎";
     $scope.bigNo = "";
     $scope.totalPrice = 0;
@@ -10,6 +12,37 @@ var app = angular.module('app', []).controller('goodsController', function ($sco
     $scope.bb = "";
     $scope.fs = "";
 
+    $scope.buy = function(i){
+        var add = {};
+        add.good = $scope.good.G_ID;
+        add.shop = $scope.shop.S_ID;
+        var gLength = 0;
+        for(g in goodsMap){
+            gLength++;
+        }
+        if(gLength < $scope.good.G_OPTIONS.length){
+            alert("请选择条件！");
+            return;
+        }
+        add.options = JSON.stringify(goodsMap);
+        add.number = parseInt($scope.number||1);
+        add.price = $scope.totalPrice+"";
+        add.status = i;
+        console.log(add);
+        $http.post("./add", add).success(
+            function(data) {
+            	if (data.status == "ok")
+    				alert("添加购物车成功！");
+    			else if(data.status == "error")
+    				alert("添加购物车失败！");
+    			else
+    				location.href = "../home/login";
+            })
+            .error(function() {
+                alert("网络错误");
+            });
+    };
+
     var goodsMap = {};
 
     $scope.calcuTotal = function (o) {
@@ -18,13 +51,14 @@ var app = angular.module('app', []).controller('goodsController', function ($sco
             $scope.number = 1;
         }
         if (o) {
+            delete o.$$hashKey;
             goodsMap[o.name] = o;
         }
         $scope.totalPrice = (parseFloat($scope.good.G_COST));
         for (var key in goodsMap) {
             $scope.totalPrice += parseFloat(goodsMap[key].price || 0);
         }
-        console.log(JSON.stringify(goodsMap));
+        //console.log(JSON.stringify(goodsMap));
         $scope.totalPrice = $scope.totalPrice * $scope.number;
     };
 
@@ -40,7 +74,7 @@ var app = angular.module('app', []).controller('goodsController', function ($sco
     /*大图随小图变化而变化*/
     $scope.s2b = function (i) {
         $scope.bigNo = i.p;
-        console.log($scope.bigNo);
+        //console.log($scope.bigNo);
         if (!$scope.$$phase) {
             $scope.$apply();
         }

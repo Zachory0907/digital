@@ -7,8 +7,6 @@ public class Consts {
 	public static final String LICENSE_MAGIC = "8ur9jd";
 	public static final String SESSION_TOKEN_KEY = "SESSION_TOKEN_KEY";
 	public static final String SESSION_TOKEN_NAME = "SESSION_TOKEN_NAME";
-	public static final String SESSION_TOKEN_AJBH = "SESSION_TOKEN_AJBH";
-	public static final String SESSION_TOKEN_AJID = "SESSION_TOKEN_AJID";
 	public static final String IGNORE_AUTHEN_TOKEN = "IGNORE_AUTHEN_TOKEN";
 	public static final int ERROR_DATAIMPORT_CODE = 409;
 	public static final int JSON_UNMARSH_DEP = 8;
