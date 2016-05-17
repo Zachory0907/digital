@@ -27,27 +27,20 @@
                 <td>区/县</td>
                 <td>详细地址</td>
             </tr>
-            <tr class="tbody">
-                <td class="chose"><input type="radio"/></td>
-                <td><input type="text" class="shr"/></td>
-                <td><select ng-model="province"
-                            ng-options="p for p in provinces">
-                    </select>
-                </td>
-                <td><select ng-model="city"
-                            ng-options="c for c in citys">
-                    </select>
-                </td>
-                <td><select ng-model="county"
-                            ng-options="co for co in counties">
-                    </select>
-                </td>
-                <td><input type="text" class="xxdz"/></td>
-                <td><input type="text" class="tel"/></td>
-                <td><input type="text" class="mail"/></td>
-                <td class="ope"><a href="#">移除</a></td>
+            <tr class="tbody" ng-repeat="ad in addresses">
+                <td class="chose"><input type="radio" name="address" ng-click="sureAddr(this)"/></td>
+                <td><input type="text" class="shr" ng-model="ad.shr"/></td>
+                <td><select ng-model="ad.province" ng-options="p for p in provinces" ng-model="ad.province"></select></td>
+                <td><select ng-model="ad.city" ng-options="c for c in citys" ng-model="ad.city"></select></td>
+                <td><select ng-model="ad.county" ng-options="co for co in counties" ng-model="ad.county"></select></td>
+                <td><input type="text" class="xxdz" ng-model="ad.detail"/></td>
+                <td><input type="text" class="tel" ng-model="ad.tel"/></td>
+                <td><input type="text" class="mail" ng-model="ad.mail"/></td>
+                <td class="ope"><a href="javascript:void(0)" ng-click="removeAddr(this)">移除</a></td>
             </tr>
         </table>
+        <a href="javascript:void(0)" ng-click="addAddr()">新增</a>
+        <a href="javascript:void(0)" ng-click="saveAddr()">保存</a>
     </div>
     <div class="payWay">
         <h3>付款方式</h3>
@@ -90,7 +83,7 @@
                 <td style="width: 300px">5688.00</td>
             </tr>
             <tr class="fot">
-                <td colspan="3" class="sh">收货地址：</td>
+                <td colspan="3" class="sh">收货地址：{{add}}</td>
                 <td colspan="3" class="zf"><a href="#">支付</a></td>
             </tr>
         </table>
