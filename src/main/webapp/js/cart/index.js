@@ -11,6 +11,31 @@ var app = angular.module('app', []).controller(
 			$scope.choosePrice = 0;
 			$scope.chooseItems = [];
 			
+			$scope.toPay = function(){
+				var ids = [];
+				for(var i=0; i<$scope.allGoods.length; i++){
+					for(var j=0; j<$scope.allGoods[i].goods.length; j++){
+						if($scope.allGoods[i].goods[j].checked == true){
+							ids.push($scope.allGoods[i].goods[j].C_ID);
+						}
+					}
+				}
+				var a = ids.toString();
+				$http.get("./toPay?ids=" + a)
+				.success(function(data) {
+					if (data.status == "ok"){
+						var url = "../pay/index";
+						location.href = url;
+//						alert("成功");
+					}
+	    			else if(data.status == "error"){
+	    				alert("删除失败！");
+	    			}
+				}).error(function() {
+					alert("网络错误");
+				});
+			};
+			
 			$scope.chooseGood = function(){
 				$scope.chooseNum = 0;
 				$scope.choosePrice = 0;
@@ -72,10 +97,14 @@ var app = angular.module('app', []).controller(
 								var opt = "";
 								for(var j=0; j<data[i].goods.length; j++){
 									data[i].goods[j].OPTIONS = JSON.parse(data[i].goods[j].OPTIONS);
+									var props = [];
+									for (var k in data[i].goods[j].OPTIONS) {
+										props.push(data[i].goods[j].OPTIONS[k].type);
+									}
+									data[i].goods[j].props = props.join(" ");
 								}
 							}
 							$scope.allGoods = data;
-							debugger
 						}
 		    			else{
 		    				location.href = "../home/login";

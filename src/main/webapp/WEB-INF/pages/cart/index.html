@@ -35,7 +35,7 @@
                             <td class="logo"><img ng-src="{{good.LOGO}}.jpg" alt="" style="padding:10px" width="80px" height="80px"/></td>
                             <td class="itemName">
                                 <p><a href="javascript:void(0)" ng-click="toGood(this)">{{good.TITLE}}</a></p>
-                                <p class="bz">哈哈</p>
+                                <p class="bz">{{good.props}}</p>
                             </td>
                             <td class="price">
                                 <p>¥ {{good.COST}}</p>
@@ -107,7 +107,7 @@
                 <tr>
                     <td>已选商品{{chooseNum}}件</td>
                     <td class="showPrice">共计：¥ {{choosePrice}}</td>
-                    <td class="toPay"><a href="#">去结算</a></td>
+                    <td class="toPay"><a href="javascript:void(0)" ng-click="toPay()">去结算</a></td>
                 </tr>
             </table>
         </div>

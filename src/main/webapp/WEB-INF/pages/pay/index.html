@@ -5,6 +5,7 @@
     <title>支付</title>
     #include("/WEB-INF/pages/tpl/header.vm")
     <script src="../js/pay/index.js"></script>
+    <script src="../js/ext/queue.js"></script>
     <link href="../css/pay/pay.css" rel="stylesheet">
 </head>
 <body ng-app="app" ng-controller="payController">
@@ -83,7 +84,7 @@
                 <td style="width: 300px">5688.00</td>
             </tr>
             <tr class="fot">
-                <td colspan="3" class="sh">收货地址：{{add}}</td>
+                <td colspan="3" class="sh" ng-show="add!=null">收货地址：{{add.province}} {{add.city}} {{add.county}} {{add.detail}} | 联系人: {{add.shr}} | 联系电话：{{add.tel}}</td>
                 <td colspan="3" class="zf"><a href="#">支付</a></td>
             </tr>
         </table>
