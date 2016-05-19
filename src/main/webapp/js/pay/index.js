@@ -8,6 +8,28 @@ var app = angular.module('app', []).controller(
 			$scope.add = {};
 
 			$scope.addresses = [];
+			$scope.goods = [];
+			$scope.totalPrice = 0;
+			$scope.ids = [];
+			
+			$scope.payNow = function(){
+				var dd = {};
+				dd.good = $scope.goods;
+				dd.add = $scope.add;
+				console.log(dd);
+				var ids = $scope.ids.toString();
+				alert("ids:"+ids);
+				$http.get("./changeStatus?ids="+ids).success(function(data) {
+					if(data.status == "ok"){
+						alert("支付成功！");
+						location.href = "../goods/index?type=1";
+					}else{
+						alert("支付失败！")
+					}
+				}).error(function() {
+					alert("网络错误");
+				});
+			};
 
 			$scope.addAddr = function() {
 				var addr = {};
@@ -69,7 +91,7 @@ var app = angular.module('app', []).controller(
 
 			var loadAddr = function(q) {
 				$http.get("./loadAddr").success(function(data) {
-					$scope.goods = data;
+					$scope.addresses = JSON.parse(data.ADDR);
 					if (q)
 						q.success();
 				}).error(function() {
@@ -79,9 +101,13 @@ var app = angular.module('app', []).controller(
 				});
 			};
 			
-			var loadItems = function(){
+			var loadItems = function(q){
 				$http.get("./loadItems").success(function(data) {
-					$scope.addresses = JSON.parse(data.ADDR);
+					$scope.goods = data;
+					for(var i=0; i<data.length; i++){
+						$scope.totalPrice += parseFloat(data[i].PRICE);
+						$scope.ids.push(data[i].C_ID);
+					}
 					if (q)
 						q.success();
 				}).error(function() {
@@ -92,7 +118,9 @@ var app = angular.module('app', []).controller(
 			};
 
 			var preparing = function() {
-				queue.add(loadAddr).finish(function() {
+				queue.add(loadAddr)
+				.add(loadItems)
+				.finish(function() {
 				}).start(function() {
 				})
 			};

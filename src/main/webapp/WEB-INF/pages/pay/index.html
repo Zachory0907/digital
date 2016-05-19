@@ -76,16 +76,18 @@
                 <th>商品</th>
                 <th>数量</th>
                 <th>价格</th>
+                <th>总计</th>
             </tr>
-            <tr class="cont">
-                <td style="width: 200px;">三星专卖店</td>
-                <td style="width: 500px">三星 Galaxy S7 edge（G9350）</td>
-                <td style="width: 200px">1</td>
-                <td style="width: 300px">5688.00</td>
+            <tr class="cont" ng-repeat="g in goods">
+                <td style="width: 200px;">{{g.S_NAME}}</td>
+                <td style="width: 500px">{{g.G_TITLE}}</td>
+                <td style="width: 200px">{{g.NUMBER}}</td>
+                <td style="width: 300px">{{g.PRICE}}</td>
+                <td style="width: 300px">{{totalPrice}}</td>
             </tr>
             <tr class="fot">
-                <td colspan="3" class="sh" ng-show="add!=null">收货地址：{{add.province}} {{add.city}} {{add.county}} {{add.detail}} | 联系人: {{add.shr}} | 联系电话：{{add.tel}}</td>
-                <td colspan="3" class="zf"><a href="#">支付</a></td>
+                <td colspan="4" class="sh" ng-show="add!=null">收货地址：{{add.province}} {{add.city}} {{add.county}} {{add.detail}} | 联系人: {{add.shr}} | 联系电话：{{add.tel}}</td>
+                <td colspan="3" class="zf"><a href="javascript:void(0)" ng-click="payNow()">支付</a></td>
             </tr>
         </table>
     </div>
