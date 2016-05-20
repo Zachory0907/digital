@@ -211,6 +211,15 @@
     position: relative;
 }
 
+#products .phone ul li a{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
+    color: #000;
+}
+
 #products .phone ul li:hover {
     height: 55px;
     line-height: 55px;
@@ -328,6 +337,15 @@
     font-size: 18px;
     list-style-type: none;
     position: relative;
+}
+
+#products .tv ul li a{
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    position: relative;
+    text-decoration: none;
+    color: #000;
 }
 
 #products .tv ul li:hover {

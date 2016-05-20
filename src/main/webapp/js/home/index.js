@@ -1,7 +1,11 @@
 var app = angular.module('app', []).controller('indexController', function($scope, $http){
 	$scope.msg = "欢迎";
 
-	
+	$scope.goGoods = function(i){
+		var url = "http://localhost:8080/digital/goods/index?id="+i;
+		//alert(url);
+		location.href = url;
+	};
 	
 	/*鼠标放到新闻上显示效果*/
 	$("#news ul li").mouseover(function(){

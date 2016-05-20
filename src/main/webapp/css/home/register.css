@@ -12,6 +12,7 @@ body {
 }
 
 #reg .reg-input {
+	background: url("../../images/home/icons/signin.png") no-repeat 182px 40px;
 	margin:0 6%;
     padding: 100px 0px;
 }
@@ -41,7 +42,28 @@ body {
     width: 150px;
     height: 40px;
     line-height: 10px;
-    text-align: right;
+}
+
+#reg .reg-input table tr td.sure {
+	background: url("../../images/home/icons/blankbotton.png") no-repeat 140px 3px;
+    height: 40px;
+    line-height: 40px;
+    text-align:center;
+}
+
+#reg .reg-input table tr td.sure a{
+    font-weight:bolder;
+	text-decoration: none;
+    font-size: 15px;
+    color: #fff;
+}
+
+#reg .reg-input table tr td.regNow {
+    height: 40px;
+    line-height: 40px;
+    text-align:right;
+    color:orange;
+    font-size:12px
 }
 
 #reg .reg-input table tr td input {

@@ -4,6 +4,10 @@ var app = angular.module('app', []).controller('registerController', function($s
 	$scope.send = 0;
 	$scope.mailMessage = "";
 	
+	$scope.loginNow = function(){
+		location.href = "/digital/home/login";
+	};
+	
 	var sendEmail = function(CHECK){
 		$scope.send = 1;
 		$http.get("./sendMail?email=" + $scope.user.EMAIL + "&check=" + CHECK).success(
