@@ -1,0 +1,7 @@
+<script src="../js/jquerys/jquery-1.7.2.min.js"></script>
+<script src="../js/import/angular.min.js"></script>
+<link href="../css/main.css" rel="stylesheet"> 
+<link href="../css/home/index.css" rel="stylesheet">
+<link href="../css/home/fanzhuan.css" rel="stylesheet">
+<script src="../js/home/prefixfree.min.js"></script>
+<script src="../js/home/modernizr.js"></script>

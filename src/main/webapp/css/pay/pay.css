@@ -1,0 +1,138 @@
+#pay{
+    width: 88%;
+    margin: 0 auto;
+}
+#pay h3{
+    color: #e4393c;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 5px;
+    border-bottom: 2px solid #e4393c;
+    width: 100px;
+}
+#pay .addr{
+    margin-top: 50px;
+}
+#pay .addr table{
+
+}
+#pay .addr table tr{
+}
+#pay .addr table tr.tbody{
+    border-bottom: 1px solid #F8F8F8;
+    height: 50px;
+    background: #FCFCFC;
+}
+#pay .addr table tr.thead{
+	background: #F8F8F8;
+    border-radius: 5px;
+}
+#pay .addr table tr.thead th{
+    padding: 10px;
+    font-size: 15px;
+    color: #002E84;
+}
+#pay .addr table tr.thead td{
+    text-align: center;
+    color: #0099CC;
+}
+#pay .addr table tr td{
+    padding: 4px;
+}
+#pay .addr table tr td input{
+    height: 30px;
+    border: 1px solid #0099cc;
+    border-radius: 4px;
+}
+
+#pay .addr table tr td input.shr{
+    width: 100px;
+}
+
+#pay .addr table tr td input.xxdz{
+    width: 250px;
+}
+
+#pay .addr table tr td input.tel{
+    width: 120px;
+}
+
+#pay .addr table tr td input.mail{
+    width: 90px;
+}
+
+#pay .addr table tr td select{
+    height: 30px;
+    border: 1px solid #0099cc;
+    border-radius: 4px;
+    width: 120px;
+}
+
+#pay .addr table tr td.chose{
+    width: 50px;
+    text-align: center;
+}
+
+#pay .addr table tr td.ope{
+    width: 100px;
+    text-align: center;
+}
+
+#pay .payWay{
+    margin-top: 50px;
+}
+#pay .payWay table{
+    width: 250px;
+    margin-left: 20px;
+}
+#pay .payWay table tr{
+    border-bottom: 1px solid #ccc;
+    height: 50px;
+}
+#pay .payWay table tr td.select{
+    width: 50px;
+    text-align: center;
+}
+#pay .payWay table tr td.way{
+    width:40px;
+}
+#pay .makeSure{
+	margin-top: 50px;
+}
+#pay .makeSure table{
+
+}
+#pay .makeSure table tr.head{
+    background: #F8F8F8;
+    border-radius: 5px;
+    height: 60px;
+}
+#pay .makeSure table tr.cont{
+    border-bottom: 1px solid #F8F8F8;
+    height: 40px;
+    background: #FCFCFC;
+}
+#pay .makeSure table tr.fot{
+    border-bottom: 1px solid #F8F8F8;
+    height: 40px;
+    background: rgba(252,252,252,0.5);
+}
+#pay .makeSure table td{
+    text-align: center;
+}
+#pay .makeSure table td.sh{
+    text-align: left;
+    text-indent: 20px;
+    color: #FFA500;
+    font-weight: bold;
+}
+#pay .makeSure table td.zf{
+}
+#pay .makeSure table td.zf a{
+    padding: 10px 20px;
+    background: #FFA500;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}

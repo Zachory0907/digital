@@ -1,0 +1,80 @@
+<script type="text/javascript">
+app.controller('headController', function($scope, $http){
+	$scope.isLogin = 0;
+	$scope.u = {};
+	
+	$scope.toIndex = function(){
+		location.href = "/digital/home/index";
+	}
+	$scope.toLogin = function(){
+		location.href = "/digital/home/login";
+	}
+	$scope.toRegister = function(){
+		location.href = "/digital/home/register";
+	}
+	$scope.toOrder = function(){
+		location.href = "/digital/cart/index?type=1";
+	}
+	$scope.toPerson = function(){
+		location.href = "/digital/home/index";
+	}
+	$scope.toCart = function(){
+		location.href = "/digital/cart/index?type=0";
+	}
+	$scope.toLogout = function(){
+		$http.get("../head/toLogout").success(function(data) {
+			if (data.status == "ok"){
+				alert("注销成功！");
+				location.href = "/digital/home/index";
+			}
+			else{
+				alert("您还未登录哦！");
+				location.href = "/digital/home/login";
+			}
+		}).error(function() {
+			alert("网络错误");
+		});
+	}
+	var preparing = function(){
+		$http.get("../head/checkUser").success(function(data) {
+			if(data.length == 0){
+			}else{
+				$scope.isLogin = 1;
+				$scope.u = data;
+			}
+		}).error(function() {
+			alert("网络错误");
+		});
+	};
+	
+	preparing();
+})
+</script>
+
+<div id="header" ng-controller="headController">
+    <a href="javascript:void(0)" ng-click="toLogin()" target="_blank" ng-show="isLogin==0">您好，请登录</a>
+    <a href="javascript:void(0)" target="_blank" ng-click="toIndex()" ng-show="isLogin==1">欢迎&nbsp;&nbsp;{{u.NICKNAME}}</a> | 
+    <a href="javascript:void(0)" ng-click="toRegister()" target="_blank" class="register">免费注册</a> | 
+    <a href="javascript:void(0)" ng-click="toOrder()" target="_blank">我的订单</a> | 
+    <a href="javascript:void(0)" target="_blank">个人中心</a> | 
+    <a href="javascript:void(0)" ng-click="toCart()" target="_blank" >购物车</a> |
+    <a href="javascript:void(0)" ng-click="toLogout()" target="_blank" style="margin-right: 60px">注销</a> 
+</div>
+<div id="searcher">
+		<div class="logo"><a href="http://localhost:8080/digital/home/index"><img src="../images/home/login/logo_3.png" alt="" width="110px"/></a></div>
+		<div class="extend-mid"></div>
+		<div class="searchBox">
+			<span><a href="#">所有宝贝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></span>
+			<div class="SearchForm">
+				<form action="">
+					<input class="txt" type="text" placeholder="输入宝贝 "/><input class="smt" type="submit" value="搜索"/>
+				</form>
+			</div>
+		</div>
+		<div class="senior">
+			搜索不精确？试试<a href="#">高级搜索</a>
+		</div>
+		<div class="extend-right"></div>
+		<div style="clear: both"></div>
+	</div>
+
